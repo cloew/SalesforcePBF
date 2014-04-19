@@ -1,5 +1,5 @@
 from pbf.Commands import command_manager
-from pbf.salesforce.helpers.salesforce_connector import SalesforceConnector
+from pbf_salesforce.helpers.salesforce_connector import SalesforceConnector
 
 class SalesforceSave:
     """ Command to Save a Salesforce file """

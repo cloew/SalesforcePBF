@@ -3,7 +3,7 @@ from pbf.helpers.file_helper import IsDirectory
 from pbf.helpers.XML.xml_helper import SaveEtreeXMLPrettily
 
 from pbf.templates import template_manager
-from pbf.salesforce.templates import TemplatesRoot
+from pbf_salesforce.templates import TemplatesRoot
 
 from xml.etree.ElementTree import parse, SubElement
 

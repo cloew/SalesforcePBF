@@ -1,4 +1,4 @@
-from pbf.salesforce.helpers.salesforce_project_helper import GetCurrentSalesforceProject
+from pbf_salesforce.helpers.salesforce_project_helper import GetCurrentSalesforceProject
 
 from simple_salesforce import Salesforce
 
