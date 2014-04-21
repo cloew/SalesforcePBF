@@ -6,5 +6,5 @@ setup(name='pbf_salesforce',
       author='Chris Loew',
       author_email='cloew123@gmail.com',
       packages=['pbf_salesforce', 'pbf_salesforce.Commands', 'pbf_salesforce.helpers', 'pbf_salesforce.templates'],
-      #package_data = {'pbf_salesforce.templates':[]}, # Add template files
+      package_data = {'pbf_salesforce.templates':['*']},
      )
