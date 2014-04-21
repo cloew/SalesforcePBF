@@ -1,7 +1,0 @@
-<project default="name" basedir="." xmlns:sf="antlib:com.salesforce">
-    <property file="build.properties"/>
-    <property environment="env"/>
-
-    <target name="main">
-    </target>
-</project>
