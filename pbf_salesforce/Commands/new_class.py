@@ -10,6 +10,7 @@ class NewClass:
     command = "class"
     description = "Creates a new Apex Class"
     minimumNumberOfArguments = 1
+    templateFile = 'new_class.cls'
     
     def run(self, args):
         """ Run the command """
@@ -20,7 +21,7 @@ class NewClass:
     def createClass(self, filepath):
         """ Create a Class """
         keywords = {'%ClassName%':GetBaseFilenameWithoutExtension(filepath)}
-        template_manager.CopyTemplate(filepath, 'new_class.cls', keywords, TemplatesRoot)
+        template_manager.CopyTemplate(filepath, self.templateFile, keywords, TemplatesRoot)
     
     def help(self):
         """ Print Command usage """
