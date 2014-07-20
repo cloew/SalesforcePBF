@@ -14,7 +14,6 @@ class SalesforceGenerateCommand:
     category = "salesforce"
     command = "generate-package"
     description = "Generate default Salesforce Package XML"
-    minimumNumberOfArguments = 1
     
     defaultMetadata = {"ApexClass":["*"],
                        "ApexComponent":["*"],
@@ -22,9 +21,13 @@ class SalesforceGenerateCommand:
                        "ApexTrigger":["*"],
                        "StaticResource":["*"]}
     
-    def run(self, args):
+    def addArguments(self, parser):
+        """ Add arguments to the parser """
+        parser.add_argument('destination', action='store', help='Destination for the Salesforce Package XML')
+    
+    def run(self, arguments):
         """ Run the command """
-        self.generatePackageXML(args[0])
+        self.generatePackageXML(arguments.destination)
         
     def generatePackageXML(self, destination, metadata=None):
         """ Generate the Package XML at the given destination with the given metadata """

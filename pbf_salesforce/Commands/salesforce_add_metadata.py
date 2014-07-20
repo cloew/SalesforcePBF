@@ -10,13 +10,18 @@ class SalesforceAddMetadata:
     category = "salesforce"
     command = "add-metadata"
     description = "Add Salesforce metadata to the current project"
-    minimumNumberOfArguments = 3
     
-    def run(self, args):
+    def addArguments(self, parser):
+        """ Add arguments to the parser """
+        parser.add_argument('username', action='store', help='Salesforce Organizaation Username')
+        parser.add_argument('password', action='store', help='Salesforce Organizaation Password')
+        parser.add_argument('token', action='store', help='Salesforce Organizaation Security Token')
+    
+    def run(self, arguments):
         """ Run the command """
-        username = args[0]
-        password = args[1]
-        securityToken = args[2]
+        username = arguments.username
+        password = arguments.password
+        securityToken = arguments.token
         project = GetParentProjectFromDirectory()
         
         if project is None:

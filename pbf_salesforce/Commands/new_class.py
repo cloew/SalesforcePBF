@@ -9,8 +9,12 @@ class NewClass:
     category = "new"
     command = "class"
     description = "Creates a new Apex Class"
-    minimumNumberOfArguments = 1
+    
     templateFile = 'new_class.cls'
+    
+    def addArguments(self, parser):
+        """ Add arguments to the parser """
+        parser.add_argument('destination', action='store', help='Destination for the new Apex class')
     
     def run(self, args):
         """ Run the command """

@@ -6,12 +6,15 @@ class SalesforceSave:
     category = "salesforce"
     command = "save"
     description = "Saves provided salesforce files to the server"
-    minimumNumberOfArguments = 1
     
-    def run(self, args):
+    def addArguments(self, parser):
+        """ Add arguments to the parser """
+        parser.add_argument('file', action='append', help='Files to save to the Saleforce server')
+    
+    def run(self, arguments):
         """ Run the command """
         print "Saving"
-        self.save(args)
+        self.save(arguments.file)
         
     def save(self, filenames):
         """ Save the given Salesforce files """

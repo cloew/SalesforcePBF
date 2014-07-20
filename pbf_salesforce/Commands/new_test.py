@@ -6,8 +6,12 @@ class NewTest(NewClass):
     category = "new"
     command = "test"
     description = "Creates a new Apex Test Class"
-    minimumNumberOfArguments = 1
+    
     templateFile = 'new_test.cls'
+    
+    def addArguments(self, parser):
+        """ Add arguments to the parser """
+        parser.add_argument('destination', action='store', help='Destination for the new Apex Test class')
     
     def help(self):
         """ Print Command usage """
